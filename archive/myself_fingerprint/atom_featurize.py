@@ -19,6 +19,8 @@ counts = collections.Counter()
 for smi in df['SMILES']:
     # 2.1 用 RDKit 解析 SMILES 成分子物件
     mol = Chem.MolFromSmiles(smi)
+    if mol is None:
+        continue   # 或跳過這筆、或丟全部 0 向量
     
     # 2.2 計算每個原子的「配位數」（coordination number）＝它相連的原子數
     #     coord 是個字典：{ atom_index: 配位數, ... }

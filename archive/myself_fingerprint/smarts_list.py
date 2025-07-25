@@ -1,5 +1,5 @@
 # 197 種 SMARTS 規則與註解
-raw_smarts_annotated = [
+raw_smarts= [
     # Carbon skeleton
     ("[CX4]", "sp3碳"),
     ("[CX3]=[CX3]", "sp2碳雙鍵"),
@@ -124,10 +124,5 @@ raw_smarts_annotated = [
     ("N#N", "氮氣"),
 ]
 
-import pandas as pd
-import ace_tools as tools
 
-# 展示資料
-df_197 = pd.DataFrame(raw_smarts_annotated, columns=["SMARTS", "說明"])
-tools.display_dataframe_to_user(name="197種 SMARTS 模式", dataframe=df_197)
 
